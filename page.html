@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- <p>{{ donnees }}</p>  -->
+      <script> 
+   let donneesfrompython = {{ donnees|safe }};
+    //safe pour éviterles mauvaises injections et rajouter de la sécurité
+   //pour indiquer des variables flask et les lire en html et python}}
+    //let donnees = JSON.parse('{{ donnees | tojson | safe }}');
+    //console.table(Object.values(donneesfrompython.hosp));
+    let donnees2frompython = {{ donnees2|safe }};
+        console.log(donnees2frompython)
+    
+
+
+
+    </script>
+    <div id="container" style="width:100%; height:400px;"></div>
+    <div id="container2" style="width:100%; height:400px;"></div>
+    <script src="/static/graph.js"></script>
+</body>
+
+</html>
